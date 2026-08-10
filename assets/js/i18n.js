@@ -1,0 +1,246 @@
+/*
+  Rera Hair Fashion Group — translations (EN / MK / SQ / TR)
+  Machine-assisted translations; recommend a native-speaker proofread before launch.
+*/
+window.RERA_I18N = {
+  languages: [
+    { code: 'en', label: 'English',   flagCode: '1f1ec-1f1e7' },
+    { code: 'mk', label: 'Македонски', flagCode: '1f1f2-1f1f0' },
+    { code: 'sq', label: 'Shqip',      flagCode: '1f1e6-1f1f1' },
+    { code: 'tr', label: 'Türkçe',     flagCode: '1f1f9-1f1f7' }
+  ],
+
+  translations: {
+    en: {
+      common: {
+        nav_studio: 'Studio', nav_products: 'Products', nav_locations: 'Locations', nav_contact: 'Contact', nav_cta: 'Inquire',
+        footer_tagline: "Professional salon and barber equipment, furniture and cosmetics — supplied from Skopje to the rest of Macedonia.",
+        footer_browse: 'Browse', footer_catalogue: 'Catalogue', footer_follow: 'Follow',
+        footer_link_chairs: 'Chairs & Furniture', footer_link_tools: 'Tools', footer_link_cosmetics: 'Cosmetics',
+        footer_rights: 'All rights reserved.', footer_location: 'Skopje · North Macedonia',
+        whatsapp_message_generic: "Hi! I'd like to ask about your products/showroom."
+      },
+      home: {
+        eyebrow: 'Skopje · Since the cut began',
+        h1_html: 'The craft<br> of <span class="ital">grooming,</span><br> properly equipped.',
+        lede: "Rera Hair Fashion Group outfits Macedonia's barbers, stylists and salon owners with professional chairs, equipment, and cosmetics — the quiet machinery behind a great cut.",
+        btn_explore: 'Explore the catalogue', btn_visit: 'Visit a showroom',
+        marquee: ['Barber Chairs','Salon Furniture','Professional Scissors','Clippers & Trimmers','Hair Cosmetics','Wash Units','Workstations'],
+        about_label: 'The Studio',
+        about_title_html: 'A house built<br>around the <span class="ital">chair.</span>',
+        about_intro: 'Equipment that earns its place in a working salon — chosen, supplied and stood behind by people who understand the trade.',
+        about_p1: "Rera Hair Fashion Group has grown from a single hairstylist's bench in Skopje into one of Macedonia's most established names in professional salon supply. We furnish barbers and stylists with what they need, end to end — from the chair under their client to the cream on the shelf.",
+        about_p2: 'We curate equipment from manufacturers who treat hairdressing as a profession, not a hobby. Comfortable, stylish, durable furniture. Clippers and shears that keep their edge. Cosmetics that respect the hair and the hairdresser.',
+        about_p3: 'Two locations across Skopje, a working showroom, and a team that has stood behind the chair long enough to know what a real working day asks of it.',
+        stat1_label: 'Years in the trade', stat2_label: 'Showrooms in Skopje', stat3_label: 'Products in catalogue', stat4_label: 'Cuts in the field',
+        locations_label: 'Visit',
+        locations_title_html: 'Two doors,<br>both <span class="ital">open.</span>',
+        locations_intro: 'Step inside either showroom in Skopje. Try the chair, hold the shears, smell the pomade. Equipment makes more sense in person.',
+        loc1_name: 'Kapištec Showroom', loc1_address: 'Kozara 68, Skopje 1000', loc1_hours: 'Mon – Sat · 09:00 – 20:00', loc1_link: 'Open in Google Maps',
+        loc2_name: 'East Gate Mall', loc2_address: 'East Gate Mall, Skopje', loc2_hours: 'Mon – Sun · 10:00 – 22:00', loc2_link: 'Find us in the mall',
+        contact_label: 'In Touch',
+        contact_title_html: 'Talk shop with <span class="ital">us.</span>',
+        contact_intro: "Sourcing a chair? Outfitting a new salon? Looking for a product we haven't listed yet? Message us on WhatsApp — we'll come back to you the same day.",
+        whatsapp_title: 'Chat on WhatsApp', whatsapp_sub: 'Fastest way to reach us — usually a same-day reply',
+        row_phone: 'Phone', row_instagram: 'Instagram', row_facebook: 'Facebook', row_city: 'City',
+        city_value: 'Skopje, North Macedonia',
+        social_instagram: 'Instagram', social_facebook: 'Facebook', social_maps: 'Maps',
+        quote: "A good chair, a sharp pair of shears, and respect for the hair — the rest is the hairdresser's craft.",
+        quote_attr: '— Rera, the working philosophy'
+      },
+      products: {
+        cat_label: 'The Catalogue',
+        filter_all: 'All', filter_chairs: 'Chairs', filter_equipment: 'Equipment', filter_tools: 'Tools', filter_cosmetics: 'Cosmetics',
+        cat_furniture: 'Furniture', cat_equipment: 'Equipment', cat_tools: 'Tools', cat_cosmetics: 'Cosmetics',
+        tag_bestseller: 'Bestseller', tag_new: 'New', tag_propick: 'Pro Pick',
+        cta_inquire: 'Inquire',
+        whatsapp_product_message: "Hi! I'm interested in the {product}.",
+        items: {
+          heritage_chair: 'Heritage Barber Chair, Black',
+          styling_chair: 'Salon Styling Chair, Cognac',
+          wash_unit: 'Professional Wash Unit',
+          shears: 'Stainless Cutting Shears, 6"',
+          hairdryer: 'Ionic Salon Hairdryer 2200W',
+          beard_oil: 'Beard Oil, Cedar & Tobacco',
+          pomade: 'Matte Styling Pomade, 100ml',
+          dispenser: 'Salon Shampoo Dispenser, 1L',
+          color_cream: 'Colour Cream, Ash Brown'
+        }
+      }
+    },
+
+    mk: {
+      common: {
+        nav_studio: 'Студио', nav_products: 'Производи', nav_locations: 'Локации', nav_contact: 'Контакт', nav_cta: 'Прашај',
+        footer_tagline: 'Професионална опрема, мебел и козметика за салони и бербери — испорачано од Скопје до остатокот на Македонија.',
+        footer_browse: 'Прелистај', footer_catalogue: 'Каталог', footer_follow: 'Следете нè',
+        footer_link_chairs: 'Столици и мебел', footer_link_tools: 'Алати', footer_link_cosmetics: 'Козметика',
+        footer_rights: 'Сите права се задржани.', footer_location: 'Скопје · Северна Македонија',
+        whatsapp_message_generic: 'Здраво! Би сакал/а да прашам за вашите производи/шоурум.'
+      },
+      home: {
+        eyebrow: 'Скопје · Занает со традиција',
+        h1_html: 'Занаетот<br> на <span class="ital">негата,</span><br> правилно опремен.',
+        lede: 'Rera Hair Fashion Group ги опремува македонските бербери, стилисти и сопственици на салони со професионални столици, опрема и козметика — тивката машинерија зад секое одлично потстрижување.',
+        btn_explore: 'Разгледај го каталогот', btn_visit: 'Посети шоурум',
+        marquee: ['Берберски столици','Салонски мебел','Професионални ножици','Тримери и машинки','Козметика за коса','Мивки за коса','Работни станици'],
+        about_label: 'Студио',
+        about_title_html: 'Куќа изградена<br>околу <span class="ital">столицата.</span>',
+        about_intro: 'Опрема што си го заслужува местото во салон што работи — избрана, испорачана и поддржана од луѓе што го разбираат занаетот.',
+        about_p1: 'Rera Hair Fashion Group израсна од едно берберско столче во Скопје во едно од најпризнаените имиња во професионалното снабдување на салони во Македонија. Ги снабдуваме берберите и стилистите со сè што им треба, од почеток до крај — од столицата под клиентот до кремот на полицата.',
+        about_p2: 'Избираме опрема од производители што го третираат берберството како професија, не хоби. Удобен, стилски и издржлив мебел. Машинки и ножици што ја задржуваат оштрината. Козметика што ја почитува косата и берберот.',
+        about_p3: 'Две локации низ Скопје, работен шоурум и тим што стои зад столицата доволно долго за да знае што бара еден вистински работен ден.',
+        stat1_label: 'Години во занаетот', stat2_label: 'Шоуруми во Скопје', stat3_label: 'Производи во каталогот', stat4_label: 'Потстрижувања на терен',
+        locations_label: 'Посета',
+        locations_title_html: 'Две врати,<br>двете <span class="ital">отворени.</span>',
+        locations_intro: 'Влезете во кој било шоурум во Скопје. Пробајте ја столицата, држете ги ножиците, помирисајте ја помадата. Опремата има поголема смисла кога ќе ја видите во живо.',
+        loc1_name: 'Шоурум Капиштец', loc1_address: 'Козара 68, Скопје 1000', loc1_hours: 'Пон – Саб · 09:00 – 20:00', loc1_link: 'Отвори во Google Maps',
+        loc2_name: 'Ист Гејт Мол', loc2_address: 'Ист Гејт Мол, Скопје', loc2_hours: 'Пон – Нед · 10:00 – 22:00', loc2_link: 'Најдете нè во молот',
+        contact_label: 'Контакт',
+        contact_title_html: 'Разговарајте <span class="ital">со нас.</span>',
+        contact_intro: 'Барате столица? Опремувате нов салон? Барате производ што сè уште не сме го изложиле? Пишете ни на WhatsApp — одговараме истиот ден.',
+        whatsapp_title: 'Разговарај на WhatsApp', whatsapp_sub: 'Најбрз начин да нè контактирате — обично одговор истиот ден',
+        row_phone: 'Телефон', row_instagram: 'Instagram', row_facebook: 'Facebook', row_city: 'Град',
+        city_value: 'Скопје, Северна Македонија',
+        social_instagram: 'Instagram', social_facebook: 'Facebook', social_maps: 'Мапи',
+        quote: 'Добра столица, остри ножици и почит кон косата — останатото е занаетот на берберот.',
+        quote_attr: '— Rera, работната филозофија'
+      },
+      products: {
+        cat_label: 'Каталогот',
+        filter_all: 'Сите', filter_chairs: 'Столици', filter_equipment: 'Опрема', filter_tools: 'Алати', filter_cosmetics: 'Козметика',
+        cat_furniture: 'Мебел', cat_equipment: 'Опрема', cat_tools: 'Алати', cat_cosmetics: 'Козметика',
+        tag_bestseller: 'Бестселер', tag_new: 'Ново', tag_propick: 'Избор на професионалци',
+        cta_inquire: 'Прашај',
+        whatsapp_product_message: 'Здраво! Ме интересира {product}.',
+        items: {
+          heritage_chair: 'Столица за бербери Heritage, црна',
+          styling_chair: 'Салонска столица за стилизирање, коњак',
+          wash_unit: 'Професионална мивка за миење коса',
+          shears: 'Нерѓосувачки ножици за сечење, 6"',
+          hairdryer: 'Јонски фен за коса 2200W',
+          beard_oil: 'Масло за брада, кедар и тутун',
+          pomade: 'Мат помада за стилизирање, 100ml',
+          dispenser: 'Дозатор за шампон, 1L',
+          color_cream: 'Боја за коса, пепелаво кафеава'
+        }
+      }
+    },
+
+    sq: {
+      common: {
+        nav_studio: 'Studio', nav_products: 'Produkte', nav_locations: 'Lokacionet', nav_contact: 'Kontakt', nav_cta: 'Pyet',
+        footer_tagline: 'Pajisje, mobilje dhe kozmetikë profesionale për sallone dhe berberë — furnizuar nga Shkupi për pjesën tjetër të Maqedonisë.',
+        footer_browse: 'Shfleto', footer_catalogue: 'Katalogu', footer_follow: 'Na ndiqni',
+        footer_link_chairs: 'Karrige & Mobilje', footer_link_tools: 'Vegla', footer_link_cosmetics: 'Kozmetikë',
+        footer_rights: 'Të gjitha të drejtat e rezervuara.', footer_location: 'Shkup · Maqedonia e Veriut',
+        whatsapp_message_generic: 'Përshëndetje! Do të doja të pyesja për produktet/showroom-in tuaj.'
+      },
+      home: {
+        eyebrow: 'Shkup · Zanat me traditë',
+        h1_html: 'Zanati<br> i <span class="ital">kujdesit,</span><br> pajisur si duhet.',
+        lede: 'Rera Hair Fashion Group pajis berberët, stilistët dhe pronarët e salloneve në Maqedoni me karrige, pajisje dhe kozmetikë profesionale — mekanizmi i heshtur pas një prerjeje të shkëlqyer.',
+        btn_explore: 'Eksploro katalogun', btn_visit: 'Vizito një showroom',
+        marquee: ['Karrige berberësh','Mobilje salloni','Gërshërë profesionale','Makina & rifinitorë','Kozmetikë flokësh','Njësi larëse','Stacione pune'],
+        about_label: 'Studio',
+        about_title_html: 'Një shtëpi e ndërtuar<br>rreth <span class="ital">karriges.</span>',
+        about_intro: 'Pajisje që e meritojnë vendin në një sallon që punon vërtet — të zgjedhura, furnizuara dhe të mbështetura nga njerëz që e njohin zanatin.',
+        about_p1: 'Rera Hair Fashion Group është rritur nga një ndenjëse e vetme berberi në Shkup në një nga emrat më të konsoliduar në Maqedoni për furnizim profesional të sallonëve. I furnizojmë berberët dhe stilistët me gjithçka që u nevojitet, nga fillimi në fund — nga karrigia nën klientin deri te krema në raft.',
+        about_p2: 'Zgjedhim pajisje nga prodhues që e trajtojnë floktarinë si profesion, jo si hobi. Mobilje komode, elegante dhe të qëndrueshme. Makina dhe gërshërë që mbajnë prerjen. Kozmetikë që respekton flokun dhe floktarin.',
+        about_p3: 'Dy lokacione në Shkup, një showroom aktiv, dhe një ekip që ka qëndruar pas karriges mjaftueshëm gjatë sa për ta ditur çfarë kërkon një ditë pune reale.',
+        stat1_label: 'Vite në zanat', stat2_label: 'Showroom në Shkup', stat3_label: 'Produkte në katalog', stat4_label: 'Prerje në terren',
+        locations_label: 'Vizitë',
+        locations_title_html: 'Dy dyer,<br>që të dyja <span class="ital">hapur.</span>',
+        locations_intro: 'Hyni në cilindo showroom në Shkup. Provoni karrigen, mbani gërshërët, nuhatni pomadën. Pajisjet kanë më shumë kuptim kur i shihni personalisht.',
+        loc1_name: 'Showroom Kapishtec', loc1_address: 'Kozara 68, Shkup 1000', loc1_hours: 'Hën – Sht · 09:00 – 20:00', loc1_link: 'Hape në Google Maps',
+        loc2_name: 'East Gate Mall', loc2_address: 'East Gate Mall, Shkup', loc2_hours: 'Hën – Die · 10:00 – 22:00', loc2_link: 'Na gjeni në mall',
+        contact_label: 'Na Kontaktoni',
+        contact_title_html: 'Bisedoni <span class="ital">me ne.</span>',
+        contact_intro: "Po kërkoni një karrige? Po pajisni një sallon të ri? Po kërkoni një produkt që s'e kemi listuar ende? Na shkruani në WhatsApp — përgjigjemi brenda ditës.",
+        whatsapp_title: 'Bisedo në WhatsApp', whatsapp_sub: 'Mënyra më e shpejtë për të na kontaktuar — përgjigje zakonisht brenda ditës',
+        row_phone: 'Telefon', row_instagram: 'Instagram', row_facebook: 'Facebook', row_city: 'Qyteti',
+        city_value: 'Shkup, Maqedonia e Veriut',
+        social_instagram: 'Instagram', social_facebook: 'Facebook', social_maps: 'Harta',
+        quote: 'Një karrige e mirë, një gërshërë e mprehtë dhe respekt për flokun — pjesa tjetër është zanati i floktarit.',
+        quote_attr: '— Rera, filozofia jonë e punës'
+      },
+      products: {
+        cat_label: 'Katalogu',
+        filter_all: 'Të gjitha', filter_chairs: 'Karrige', filter_equipment: 'Pajisje', filter_tools: 'Vegla', filter_cosmetics: 'Kozmetikë',
+        cat_furniture: 'Mobilje', cat_equipment: 'Pajisje', cat_tools: 'Vegla', cat_cosmetics: 'Kozmetikë',
+        tag_bestseller: 'Më i shituri', tag_new: 'E re', tag_propick: 'Zgjedhje profesionale',
+        cta_inquire: 'Pyet',
+        whatsapp_product_message: 'Përshëndetje! Jam i interesuar për {product}.',
+        items: {
+          heritage_chair: 'Karrige Berberi Heritage, e Zezë',
+          styling_chair: 'Karrige Stilimi Salloni, Konjak',
+          wash_unit: 'Njësi Profesionale Larëse',
+          shears: 'Gërshërë Prerjeje Inox, 6"',
+          hairdryer: 'Tharëse Flokësh Jonike Salloni 2200W',
+          beard_oil: 'Vaj Mjekre, Kedër & Duhan',
+          pomade: 'Pomadë Stilimi Mat, 100ml',
+          dispenser: 'Dozator Shampoje Salloni, 1L',
+          color_cream: 'Krem Ngjyre, Kafe Hiri'
+        }
+      }
+    },
+
+    tr: {
+      common: {
+        nav_studio: 'Stüdyo', nav_products: 'Ürünler', nav_locations: 'Lokasyonlar', nav_contact: 'İletişim', nav_cta: 'Sor',
+        footer_tagline: "Salon ve berberler için profesyonel ekipman, mobilya ve kozmetik — Üsküp'ten Makedonya'nın geri kalanına tedarik edilir.",
+        footer_browse: 'Keşfet', footer_catalogue: 'Katalog', footer_follow: 'Takip edin',
+        footer_link_chairs: 'Koltuklar & Mobilya', footer_link_tools: 'Aletler', footer_link_cosmetics: 'Kozmetikler',
+        footer_rights: 'Tüm hakları saklıdır.', footer_location: 'Üsküp · Kuzey Makedonya',
+        whatsapp_message_generic: 'Merhaba! Ürünleriniz/showroom hakkında bilgi almak istiyorum.'
+      },
+      home: {
+        eyebrow: 'Üsküp · Gelenekle gelen zanaat',
+        h1_html: 'Bakımın<br><span class="ital">zanaati,</span><br>doğru donanımla.',
+        lede: "Rera Hair Fashion Group, Makedonya'daki berberleri, kuaförleri ve salon sahiplerini profesyonel koltuklar, ekipman ve kozmetiklerle donatıyor — harika bir kesinin arkasındaki sessiz mekanizma.",
+        btn_explore: 'Kataloğu keşfet', btn_visit: "Bir showroom'u ziyaret et",
+        marquee: ['Berber Koltukları','Salon Mobilyaları','Profesyonel Makaslar','Tıraş Makineleri','Saç Kozmetikleri','Yıkama Üniteleri','Çalışma İstasyonları'],
+        about_label: 'Stüdyo',
+        about_title_html: 'Koltuğun<br>etrafında kurulmuş <span class="ital">bir ev.</span>',
+        about_intro: 'Gerçek bir salonda yerini hak eden ekipman — işi bilen kişiler tarafından seçilmiş, tedarik edilmiş ve arkasında durulmuş.',
+        about_p1: "Rera Hair Fashion Group, Üsküp'te tek bir berber koltuğundan Makedonya'nın profesyonel salon tedarikinde en köklü isimlerinden birine dönüştü. Berberlere ve kuaförlere ihtiyaç duydukları her şeyi uçtan uca sağlıyoruz — müşterinin altındaki koltuktan rafındaki kreme kadar.",
+        about_p2: 'Kuaförlüğü bir hobi değil, bir meslek olarak gören üreticilerden ekipman seçiyoruz. Konforlu, şık, dayanıklı mobilyalar. Kesme gücünü koruyan makas ve makineler. Saça ve kuaföre saygı duyan kozmetikler.',
+        about_p3: "Üsküp genelinde iki lokasyon, çalışan bir showroom ve gerçek bir iş gününün ne gerektirdiğini bilecek kadar uzun süredir koltuğun arkasında duran bir ekip.",
+        stat1_label: 'Sektörde yıl', stat2_label: "Üsküp'te showroom", stat3_label: 'Katalogdaki ürün', stat4_label: 'Sahadaki kesim',
+        locations_label: 'Ziyaret',
+        locations_title_html: 'İki kapı,<br>ikisi de <span class="ital">açık.</span>',
+        locations_intro: "Üsküp'teki showroomlardan birine girin. Koltuğu deneyin, makası elinize alın, pomadı koklayın. Ekipman yüz yüze görüldüğünde daha çok anlam kazanır.",
+        loc1_name: 'Kapiştec Showroom', loc1_address: 'Kozara 68, Üsküp 1000', loc1_hours: 'Pzt – Cmt · 09:00 – 20:00', loc1_link: "Google Haritalar'da aç",
+        loc2_name: 'East Gate Mall', loc2_address: "East Gate Mall, Üsküp", loc2_hours: 'Pzt – Paz · 10:00 – 22:00', loc2_link: "Bizi AVM'de bulun",
+        contact_label: 'İletişim',
+        contact_title_html: 'Bizimle <span class="ital">konuşun.</span>',
+        contact_intro: "Koltuk mu arıyorsunuz? Yeni bir salon mu donatıyorsunuz? Listelemediğimiz bir ürün mü arıyorsunuz? Bize WhatsApp'tan yazın — genelde aynı gün dönüş yapıyoruz.",
+        whatsapp_title: "WhatsApp'tan yazın", whatsapp_sub: 'Bize ulaşmanın en hızlı yolu — genellikle aynı gün yanıt',
+        row_phone: 'Telefon', row_instagram: 'Instagram', row_facebook: 'Facebook', row_city: 'Şehir',
+        city_value: 'Üsküp, Kuzey Makedonya',
+        social_instagram: 'Instagram', social_facebook: 'Facebook', social_maps: 'Harita',
+        quote: 'İyi bir koltuk, keskin bir makas ve saça duyulan saygı — gerisi kuaförün ustalığıdır.',
+        quote_attr: '— Rera, çalışma felsefemiz'
+      },
+      products: {
+        cat_label: 'Katalog',
+        filter_all: 'Tümü', filter_chairs: 'Koltuklar', filter_equipment: 'Ekipman', filter_tools: 'Aletler', filter_cosmetics: 'Kozmetik',
+        cat_furniture: 'Mobilya', cat_equipment: 'Ekipman', cat_tools: 'Aletler', cat_cosmetics: 'Kozmetik',
+        tag_bestseller: 'Çok Satan', tag_new: 'Yeni', tag_propick: 'Profesyonel Seçimi',
+        cta_inquire: 'Sor',
+        whatsapp_product_message: 'Merhaba! {product} ile ilgileniyorum.',
+        items: {
+          heritage_chair: 'Heritage Berber Koltuğu, Siyah',
+          styling_chair: 'Salon Şekillendirme Koltuğu, Konyak',
+          wash_unit: 'Profesyonel Yıkama Ünitesi',
+          shears: 'Paslanmaz Kesim Makası, 6"',
+          hairdryer: 'İyonik Salon Saç Kurutma Makinesi 2200W',
+          beard_oil: 'Sakal Yağı, Sedir & Tütün',
+          pomade: 'Mat Şekillendirme Pomadı, 100ml',
+          dispenser: 'Salon Şampuan Dispenseri, 1L',
+          color_cream: 'Renklendirme Kremi, Kül Kahve'
+        }
+      }
+    }
+  }
+};

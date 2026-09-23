@@ -1,0 +1,6 @@
+_source/
+.firebase/
+
+# Portfolio screenshots, not part of the site
+rera-website.png
+rera-website@2x.png

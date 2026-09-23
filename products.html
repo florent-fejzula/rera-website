@@ -3,15 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Catalogue — Rera Hair Fashion Group</title>
+<title>Catalogue — Barber Chairs, Salon Furniture &amp; Equipment | Rera Skopje</title>
 <meta name="description" content="Rera Hair Fashion Group — product catalogue for professional barber chairs, salon furniture, equipment and cosmetics." />
 
-<!--
-  NOTE: "https://www.rerahairfashion.mk/" below is a PLACEHOLDER domain.
-  Replace every occurrence (canonical, og:url, twitter, hreflang) with the real
-  production domain before launch.
--->
-<link rel="canonical" href="https://www.rerahairfashion.mk/products.html" />
+<link rel="canonical" href="https://rera.mk/products.html" />
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
 <meta name="theme-color" content="#0d0b0a" />
 
@@ -19,18 +14,21 @@
 <meta property="og:site_name" content="Rera Hair Fashion Group" />
 <meta property="og:title" content="Catalogue — Rera Hair Fashion Group" />
 <meta property="og:description" content="Professional barber chairs, salon furniture, equipment and cosmetics — browse the Rera catalogue." />
-<meta property="og:image" content="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1200&h=630&fit=crop&q=80" />
-<meta property="og:url" content="https://www.rerahairfashion.mk/products.html" />
+<meta property="og:image" content="https://rera.mk/assets/img/og-cover.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Rera Hair Fashion Group wholesale showroom in Skopje, stocked with professional salon chairs and equipment" />
+<meta property="og:url" content="https://rera.mk/products.html" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Catalogue — Rera Hair Fashion Group" />
 <meta name="twitter:description" content="Professional barber chairs, salon furniture, equipment and cosmetics — browse the Rera catalogue." />
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1200&h=630&fit=crop&q=80" />
+<meta name="twitter:image" content="https://rera.mk/assets/img/og-cover.jpg" />
 
-<link rel="alternate" hreflang="en" href="https://www.rerahairfashion.mk/products.html?lang=en" />
-<link rel="alternate" hreflang="mk" href="https://www.rerahairfashion.mk/products.html?lang=mk" />
-<link rel="alternate" hreflang="sq" href="https://www.rerahairfashion.mk/products.html?lang=sq" />
-<link rel="alternate" hreflang="tr" href="https://www.rerahairfashion.mk/products.html?lang=tr" />
-<link rel="alternate" hreflang="x-default" href="https://www.rerahairfashion.mk/products.html" />
+<link rel="alternate" hreflang="en" href="https://rera.mk/products.html?lang=en" />
+<link rel="alternate" hreflang="mk" href="https://rera.mk/products.html?lang=mk" />
+<link rel="alternate" hreflang="sq" href="https://rera.mk/products.html?lang=sq" />
+<link rel="alternate" hreflang="tr" href="https://rera.mk/products.html?lang=tr" />
+<link rel="alternate" hreflang="x-default" href="https://rera.mk/products.html" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,18 +91,39 @@
 <!-- CATALOGUE -->
 <div class="catalogue-wrap">
   <div class="cat-bar">
-    <span class="cat-label" data-i18n="products.cat_label">The Catalogue</span>
+    <h1 class="cat-label" data-i18n="products.cat_label">The Catalogue</h1>
     <div class="filters" id="filters">
-      <button class="filter active" data-cat="all" data-i18n="products.filter_all">All</button>
-      <button class="filter" data-cat="chairs" data-i18n="products.filter_chairs">Chairs</button>
-      <button class="filter" data-cat="equipment" data-i18n="products.filter_equipment">Equipment</button>
-      <button class="filter" data-cat="tools" data-i18n="products.filter_tools">Tools</button>
-      <button class="filter" data-cat="cosmetics" data-i18n="products.filter_cosmetics">Cosmetics</button>
+      <!-- Rendered by assets/js/main.js from the live categories in Firestore -->
     </div>
   </div>
 
   <div class="product-list" id="products-grid">
-    <!-- Rendered by assets/js/main.js from the PRODUCTS data + current language -->
+    <!-- Rendered by assets/js/main.js from the live catalogue in Firestore -->
+  </div>
+</div>
+
+<!-- CONTACT CHOICE MODAL
+     Opened by each product's Inquire button (assets/js/main.js) instead of
+     linking straight to WhatsApp — some customers only have Viber. -->
+<div class="contact-modal" id="contact-modal">
+  <div class="contact-modal-backdrop" data-modal-dismiss></div>
+  <div class="contact-modal-panel" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title" aria-describedby="contact-modal-hint">
+    <button type="button" class="contact-modal-close" data-modal-dismiss aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <p class="contact-modal-eyebrow" data-i18n="products.modal_eyebrow">Get in touch about</p>
+    <h3 class="contact-modal-title" id="contact-modal-title">&nbsp;</h3>
+    <p class="contact-modal-hint" id="contact-modal-hint" data-i18n="products.modal_hint">Choose where you'd like to message us.</p>
+    <div class="contact-modal-actions">
+      <a class="btn btn-ghost contact-modal-btn" id="contact-modal-whatsapp" href="#" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.64-1.03-5.12-2.9-6.98A9.82 9.82 0 0 0 12.04 2zm0 18.1a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.26 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.48c-.16 0-.42.06-.64.31-.22.25-.85.83-.85 2.02 0 1.19.87 2.34 1 2.5.12.17 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+        <span data-i18n="products.modal_whatsapp">WhatsApp</span>
+      </a>
+      <a class="btn btn-ghost contact-modal-btn" id="contact-modal-viber" href="#" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3C6.98 3 3 6.58 3 11c0 2.55 1.33 4.83 3.4 6.32-.12 1.06-.5 2.4-1.13 3.7a.4.4 0 0 0 .5.55c1.8-.6 3.24-1.35 4.16-1.9.98.22 2.02.33 3.07.33 5.02 0 9-3.58 9-8s-3.98-8-9-8z"/><circle cx="8.3" cy="11" r="1.15" fill="currentColor" stroke="none"/><circle cx="12" cy="11" r="1.15" fill="currentColor" stroke="none"/><circle cx="15.7" cy="11" r="1.15" fill="currentColor" stroke="none"/></svg>
+        <span data-i18n="products.modal_viber">Viber</span>
+      </a>
+    </div>
   </div>
 </div>
 
@@ -125,11 +144,11 @@
       </ul>
     </div>
     <div class="foot-col">
-      <h4 data-i18n="common.footer_catalogue">Catalogue</h4>
+      <h4 data-i18n="common.footer_visit">Visit</h4>
       <ul>
-        <li><a href="products.html?cat=chairs" data-i18n="common.footer_link_chairs">Chairs &amp; Furniture</a></li>
-        <li><a href="products.html?cat=tools" data-i18n="common.footer_link_tools">Tools</a></li>
-        <li><a href="products.html?cat=cosmetics" data-i18n="common.footer_link_cosmetics">Cosmetics</a></li>
+        <li><a href="index.html#locations" data-i18n="home.loc1_name">Rera Hair &amp; Design</a></li>
+        <li><a href="index.html#locations" data-i18n="home.loc2_name">Rera East Gate</a></li>
+        <li><a href="index.html#locations" data-i18n="home.loc3_name">Rera Hair Fashion Group</a></li>
       </ul>
     </div>
     <div class="foot-col">
@@ -148,6 +167,7 @@
 </footer>
 
 <script src="assets/js/i18n.js"></script>
+<script src="assets/js/firebase-config.js"></script>
 <script src="assets/js/main.js"></script>
 
 </body>

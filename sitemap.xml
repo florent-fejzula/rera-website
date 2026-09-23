@@ -2,22 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.rerahairfashion.mk/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.rerahairfashion.mk/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://www.rerahairfashion.mk/?lang=mk"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://www.rerahairfashion.mk/?lang=sq"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.rerahairfashion.mk/?lang=tr"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rerahairfashion.mk/"/>
+    <loc>https://rera.mk/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rera.mk/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://rera.mk/?lang=mk"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://rera.mk/?lang=sq"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rera.mk/?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rera.mk/"/>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.rerahairfashion.mk/products.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.rerahairfashion.mk/products.html?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="mk" href="https://www.rerahairfashion.mk/products.html?lang=mk"/>
-    <xhtml:link rel="alternate" hreflang="sq" href="https://www.rerahairfashion.mk/products.html?lang=sq"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.rerahairfashion.mk/products.html?lang=tr"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.rerahairfashion.mk/products.html"/>
+    <loc>https://rera.mk/products.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rera.mk/products.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://rera.mk/products.html?lang=mk"/>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://rera.mk/products.html?lang=sq"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://rera.mk/products.html?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rera.mk/products.html"/>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>

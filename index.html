@@ -6,12 +6,7 @@
 <title>Rera Hair Fashion Group — Professional Salon Equipment & Cosmetics, Skopje</title>
 <meta name="description" content="Rera Hair Fashion Group — professional barber chairs, salon furniture, equipment and cosmetics in Skopje, Macedonia." />
 
-<!--
-  NOTE: "https://www.rerahairfashion.mk/" below is a PLACEHOLDER domain.
-  Replace every occurrence (canonical, og:url, twitter, hreflang, JSON-LD @id/url)
-  with the real production domain before launch.
--->
-<link rel="canonical" href="https://www.rerahairfashion.mk/" />
+<link rel="canonical" href="https://rera.mk/" />
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
 <meta name="theme-color" content="#0d0b0a" />
 
@@ -19,8 +14,11 @@
 <meta property="og:site_name" content="Rera Hair Fashion Group" />
 <meta property="og:title" content="Rera Hair Fashion Group — Professional Salon Equipment & Cosmetics, Skopje" />
 <meta property="og:description" content="Professional barber chairs, salon furniture, equipment and cosmetics in Skopje, Macedonia." />
-<meta property="og:image" content="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=1200&h=630&fit=crop&q=80" />
-<meta property="og:url" content="https://www.rerahairfashion.mk/" />
+<meta property="og:image" content="https://rera.mk/assets/img/og-cover.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Rera Hair Fashion Group wholesale showroom in Skopje, stocked with professional salon chairs and equipment" />
+<meta property="og:url" content="https://rera.mk/" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:locale:alternate" content="mk_MK" />
 <meta property="og:locale:alternate" content="sq_AL" />
@@ -28,13 +26,13 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Rera Hair Fashion Group — Professional Salon Equipment & Cosmetics, Skopje" />
 <meta name="twitter:description" content="Professional barber chairs, salon furniture, equipment and cosmetics in Skopje, Macedonia." />
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=1200&h=630&fit=crop&q=80" />
+<meta name="twitter:image" content="https://rera.mk/assets/img/og-cover.jpg" />
 
-<link rel="alternate" hreflang="en" href="https://www.rerahairfashion.mk/?lang=en" />
-<link rel="alternate" hreflang="mk" href="https://www.rerahairfashion.mk/?lang=mk" />
-<link rel="alternate" hreflang="sq" href="https://www.rerahairfashion.mk/?lang=sq" />
-<link rel="alternate" hreflang="tr" href="https://www.rerahairfashion.mk/?lang=tr" />
-<link rel="alternate" hreflang="x-default" href="https://www.rerahairfashion.mk/" />
+<link rel="alternate" hreflang="en" href="https://rera.mk/?lang=en" />
+<link rel="alternate" hreflang="mk" href="https://rera.mk/?lang=mk" />
+<link rel="alternate" hreflang="sq" href="https://rera.mk/?lang=sq" />
+<link rel="alternate" hreflang="tr" href="https://rera.mk/?lang=tr" />
+<link rel="alternate" hreflang="x-default" href="https://rera.mk/" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,10 +45,11 @@
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://www.rerahairfashion.mk/#organization",
+      "@id": "https://rera.mk/#organization",
       "name": "Rera Hair Fashion Group",
-      "url": "https://www.rerahairfashion.mk/",
-      "logo": "https://www.rerahairfashion.mk/assets/img/favicon.svg",
+      "url": "https://rera.mk/",
+      "logo": "https://rera.mk/assets/img/rera-logo.png",
+      "foundingDate": "1996",
       "sameAs": [
         "https://www.instagram.com/rera.hairfashion/",
         "https://www.facebook.com/rera.professional",
@@ -58,10 +57,10 @@
       ]
     },
     {
-      "@type": "Store",
-      "name": "Rera Hair Fashion Group — Kapištec Showroom",
+      "@type": "HairSalon",
+      "name": "Rera Hair & Design — Kapištec",
       "telephone": "+38970242001",
-      "parentOrganization": { "@id": "https://www.rerahairfashion.mk/#organization" },
+      "parentOrganization": { "@id": "https://rera.mk/#organization" },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Kozara 68",
@@ -77,10 +76,10 @@
       }]
     },
     {
-      "@type": "Store",
-      "name": "Rera Hair Fashion Group — East Gate Mall",
+      "@type": "HairSalon",
+      "name": "Rera East Gate — East Gate Mall",
       "telephone": "+38972660634",
-      "parentOrganization": { "@id": "https://www.rerahairfashion.mk/#organization" },
+      "parentOrganization": { "@id": "https://rera.mk/#organization" },
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Skopje",
@@ -88,10 +87,27 @@
       },
       "openingHoursSpecification": [{
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
         "opens": "10:00",
         "closes": "22:00"
+      },{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "10:00",
+        "closes": "20:00"
       }]
+    },
+    {
+      "@type": "Store",
+      "name": "Rera Hair Fashion Group — Vizbegovo Wholesale Showroom",
+      "telephone": "+38978500737",
+      "parentOrganization": { "@id": "https://rera.mk/#organization" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Skopje",
+        "addressCountry": "MK"
+      },
+      "hasMap": "https://www.google.com/maps/place/Rera+Hair+Fashion+Group/@42.0209241,21.3993502,15z/data=!4m6!3m5!1s0x135415002bddbafd:0x30d55096004cc016!8m2!3d42.0209253!4d21.4096545!16s%2Fg%2F11m5hpxz4s"
     }
   ]
 }
@@ -152,9 +168,16 @@
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <video class="hero-video" autoplay muted loop playsinline preload="auto"
-    src="test_video_web.mp4">
-  </video>
+  <!-- Two layers cross-fade between clips. Clip list lives in main.js
+       (HERO_CLIPS); with only one clip it simply loops, so a missing or
+       failed second file degrades to the original behaviour. -->
+  <div class="hero-media">
+    <video class="hero-video is-active" autoplay muted loop playsinline
+           preload="auto" poster="assets/video/hero-poster.jpg"
+           src="assets/video/hero-01-barbershop.mp4"></video>
+    <video class="hero-video" muted playsinline preload="none"
+           poster="assets/video/hero-poster.jpg"></video>
+  </div>
   <div class="hero-left reveal">
     <span class="eyebrow" data-i18n="home.eyebrow">Skopje · Since the cut began</span>
     <h1 class="display" data-i18n-html="home.h1_html">
@@ -172,29 +195,31 @@
         <span data-i18n="home.btn_explore">Explore the catalogue</span> <span class="arrow">→</span>
       </a>
       <a href="#locations" class="btn btn-ghost">
-        <span data-i18n="home.btn_visit">Visit a showroom</span> <span class="arrow">→</span>
+        <span data-i18n="home.btn_visit">Find a location</span> <span class="arrow">→</span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee">
-  <div class="marquee-track" id="marquee-track">
-    <span>Barber Chairs <i class="dot"></i> Salon Furniture <i class="dot"></i> Professional Scissors <i class="dot"></i> Clippers & Trimmers <i class="dot"></i> Hair Cosmetics <i class="dot"></i> Wash Units <i class="dot"></i> Workstations <i class="dot"></i></span>
-    <span>Barber Chairs <i class="dot"></i> Salon Furniture <i class="dot"></i> Professional Scissors <i class="dot"></i> Clippers & Trimmers <i class="dot"></i> Hair Cosmetics <i class="dot"></i> Wash Units <i class="dot"></i> Workstations <i class="dot"></i></span>
-  </div>
+<!-- CATEGORY STRIP -->
+<div class="category-strip reveal">
+  <div class="category-strip-track" id="category-strip-track"></div>
 </div>
 
 <!-- STUDIO -->
 <section id="about" class="reveal">
   <div class="studio-inner">
-    <h2 class="section-title" data-i18n-html="home.about_title_html">Fifteen years of outfitting<br>Skopje's <span class="ital">salons.</span></h2>
+    <h2 class="section-title" data-i18n-html="home.about_title_html">Decades of outfitting<br>Skopje's <span class="ital">salons.</span></h2>
     <p class="studio-lede" data-i18n="home.about_intro">
       Rera supplies the chairs, furniture, tools and cosmetics that make up a working
       salon or barbershop — chosen for what holds up on a full Saturday, not just how
       it looks empty in a showroom.
     </p>
+    <div class="studio-body">
+      <p data-i18n="home.about_p1">Rera Hair Fashion Group has grown from a single hairstylist's bench in Skopje in 1996 into one of Macedonia's most established names in professional salon supply. We furnish barbers and stylists with what they need, end to end — from the chair under their client to the cream on the shelf.</p>
+      <p data-i18n="home.about_p2">We curate equipment from manufacturers who treat hairdressing as a profession, not a hobby. Comfortable, stylish, durable furniture. Clippers and shears that keep their edge. Cosmetics that respect the hair and the hairdresser.</p>
+      <p data-i18n="home.about_p3">Two locations across Skopje, a working showroom, and a team that has stood behind the chair long enough to know what a real working day asks of it.</p>
+    </div>
     <div class="studio-photos">
       <figure>
         <img src="assets/img/gallery/interior-arched-mirrors.jpg" alt="">
@@ -217,11 +242,11 @@
   <div class="facts-row">
     <div class="fact">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
-      <div class="t"><b>15<span class="plus">+</span></b><span data-i18n="home.stat1_label">Years in the trade</span></div>
+      <div class="t"><b><span id="years-count">30</span><span class="plus">+</span></b><span data-i18n="home.stat1_label">Years in the trade</span></div>
     </div>
     <div class="fact">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
-      <div class="t"><b>2</b><span data-i18n="home.stat2_label">Showrooms in Skopje</span></div>
+      <div class="t"><b>3</b><span data-i18n="home.stat2_label">Locations in Skopje</span></div>
     </div>
     <div class="fact">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7l9-4 9 4-9 4-9-4zm0 0v10l9 4 9-4V7M12 11v10"/></svg>
@@ -285,32 +310,14 @@
     </div>
   </div>
 
-  <div class="tools-head">
-    <h3 data-i18n="home.tools_title">Also on the floor: tools</h3>
-    <span data-i18n="home.tools_brand">Wahl Professional</span>
-  </div>
-  <div class="tools-strip">
-    <div class="tool-item">
-      <div class="tool-thumb"><img src="assets/img/products/wahl-super-taper.jpg" alt="Wahl Super Taper box"></div>
-      <div>
-        <h4 data-i18n="home.tool1_name">Super Taper Cordless</h4>
-        <p data-i18n="home.tool1_desc">Standard blade, Li-ion, up to 100 min run time.</p>
-      </div>
+  <div class="floor-cta reveal">
+    <div>
+      <h3 data-i18n="home.floor_cta_title">This is only a taste of the floor</h3>
+      <p data-i18n="home.floor_cta_text">Chairs, wash units, clippers, cosmetics and more — browse the full catalogue to see what's in stock right now.</p>
     </div>
-    <div class="tool-item">
-      <div class="tool-thumb"><img src="assets/img/products/wahl-magic-clip.jpg" alt="Wahl Magic Clip box"></div>
-      <div>
-        <h4 data-i18n="home.tool2_name">Magic Clip Cordless</h4>
-        <p data-i18n="home.tool2_desc">5-Star series, stagger-tooth blade, seamless fading.</p>
-      </div>
-    </div>
-    <div class="tool-item">
-      <div class="tool-thumb"><img src="assets/img/products/wahl-detailer-li.jpg" alt="Wahl Detailer Li box"></div>
-      <div>
-        <h4 data-i18n="home.tool3_name">Detailer Li</h4>
-        <p data-i18n="home.tool3_desc">Adjustable T-wide blade, zero-gap, bonus pro-set tool.</p>
-      </div>
-    </div>
+    <a href="products.html" class="btn btn-primary">
+      <span data-i18n="home.floor_cta_button">Browse all products</span> <span class="arrow">→</span>
+    </a>
   </div>
 </section>
 
@@ -319,64 +326,112 @@
   <div class="section-head reveal">
     <div>
       <div class="section-label" data-i18n="home.locations_label">Visit</div>
-      <h2 class="section-title" data-i18n-html="home.locations_title_html">Two doors,<br/>both <span class="ital">open.</span></h2>
+      <h2 class="section-title" data-i18n-html="home.locations_title_html">Get a cut.<br/>Get <span class="ital">equipped.</span></h2>
     </div>
     <p class="section-intro" data-i18n="home.locations_intro">
-      Step inside either showroom in Skopje. Try the chair, hold the shears,
-      smell the pomade. Equipment makes more sense in person.
+      Three doors in Skopje — two for the cut, one for everything behind it.
     </p>
   </div>
 
-  <div class="locations-grid reveal">
-
-    <div class="location">
-      <div class="location-num">— No. 01 —</div>
-      <h3 class="location-name" data-i18n="home.loc1_name">Kapištec Showroom</h3>
-      <div class="location-meta">
-        <div class="row">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span data-i18n="home.loc1_address">Kozara 68, Skopje 1000</span>
-        </div>
-        <div class="row">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
-          <a href="tel:+38970242001">+389 70 242 001</a>
-        </div>
-        <div class="row">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span data-i18n="home.loc1_hours">Mon – Sat · 09:00 – 20:00</span>
-        </div>
-      </div>
-      <a href="https://www.google.com/maps/place/Rera+Hair+Fashion+Group/@42.0209241,21.3993502,15z/data=!4m6!3m5!1s0x135415002bddbafd:0x30d55096004cc016!8m2!3d42.0209253!4d21.4096545!16s%2Fg%2F11m5hpxz4s?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D"
-         target="_blank" rel="noopener"
-         class="location-link">
-        <span data-i18n="home.loc1_link">Open in Google Maps</span> <span class="arrow">↗</span>
-      </a>
+  <div class="location-group reveal">
+    <div class="location-group-head">
+      <h3 data-i18n="home.salons_group_title">Hair Salons</h3>
+      <p data-i18n="home.salons_group_text">Walk in or call ahead — Rera's two barbershops, open across Skopje.</p>
     </div>
+    <div class="locations-grid">
 
-    <div class="location">
-      <div class="location-num">— No. 02 —</div>
-      <h3 class="location-name" data-i18n="home.loc2_name">East Gate Mall</h3>
-      <div class="location-meta">
-        <div class="row">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span data-i18n="home.loc2_address">East Gate Mall, Skopje</span>
+      <div class="location">
+        <div class="location-photo"><img src="assets/img/gallery/location-kapistec-storefront.jpg" alt="Rera Hair &amp; Design storefront, Kapištec"></div>
+        <div class="location-num">— No. 01 —</div>
+        <h3 class="location-name" data-i18n="home.loc1_name">Rera Hair &amp; Design</h3>
+        <div class="location-sub" data-i18n="home.loc1_sub">Kapištec</div>
+        <div class="location-meta">
+          <div class="row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="home.loc1_address">Kozara 68, Skopje 1000</span>
+          </div>
+          <div class="row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:+38970242001">+389 70 242 001</a>
+          </div>
+          <div class="row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span data-i18n="home.loc1_hours">Mon – Sat · 09:00 – 20:00</span>
+          </div>
         </div>
-        <div class="row">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
-          <a href="tel:+38972660634">+389 72 660 634</a>
-        </div>
-        <div class="row">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span data-i18n="home.loc2_hours">Mon – Sun · 10:00 – 22:00</span>
-        </div>
+        <a href="https://www.google.com/maps/place/Rera+-+Kapi%C5%A1tec/@41.9920868,21.4150907,19.5z/data=!4m14!1m7!3m6!1s0x135415002bddbafd:0x30d55096004cc016!2sRera+Hair+Fashion+Group!8m2!3d42.0209253!4d21.4096545!16s%2Fg%2F11m5hpxz4s!3m5!1s0x1354151110facb43:0x39eded553d293176!8m2!3d41.9921618!4d21.4151119!16s%2Fg%2F11hfz5bxw7?entry=ttu&g_ep=EgoyMDI2MDgxMC4wIKXMDSoASAFQAw%3D%3D"
+           target="_blank" rel="noopener"
+           class="location-link">
+          <span data-i18n="home.loc1_link">Open in Google Maps</span> <span class="arrow">↗</span>
+        </a>
       </div>
-      <a href="https://eastgatemall.mk/en/brand/rera-hair-salon/"
-         target="_blank" rel="noopener"
-         class="location-link">
-        <span data-i18n="home.loc2_link">Find us in the mall</span> <span class="arrow">↗</span>
-      </a>
-    </div>
 
+      <div class="location">
+        <div class="location-photo"><img src="assets/img/gallery/location-eastgate-storefront.jpg" alt="Rera East Gate storefront, East Gate Mall"></div>
+        <div class="location-num">— No. 02 —</div>
+        <h3 class="location-name" data-i18n="home.loc2_name">Rera East Gate</h3>
+        <div class="location-sub" data-i18n="home.loc2_sub">East Gate Mall</div>
+        <div class="location-meta">
+          <div class="row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="home.loc2_address">East Gate Mall, Skopje</span>
+          </div>
+          <div class="row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.37 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:+38972660634">+389 72 660 634</a>
+          </div>
+          <div class="row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span data-i18n-html="home.loc2_hours">Mon – Sat · 10:00 – 22:00<br>Sun · 10:00 – 20:00</span>
+          </div>
+        </div>
+        <a href="https://www.google.com/maps/place/Rera+East+Gate/@41.9973987,21.4534538,21z/data=!4m6!3m5!1s0x135415007e23086f:0x343f74247b973210!8m2!3d41.9973603!4d21.4533952!16s%2Fg%2F11zxngfscr?entry=ttu&g_ep=EgoyMDI2MDkxNC4wIKXMDSoASAFQAw%3D%3D"
+           target="_blank" rel="noopener"
+           class="location-link">
+          <span data-i18n="home.loc1_link">Open in Google Maps</span> <span class="arrow">↗</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="location-group reveal">
+    <div class="location-group-head">
+      <h3 data-i18n="home.wholesale_group_title">Wholesale Showroom</h3>
+      <p data-i18n="home.wholesale_group_text">Chairs, furniture, tools and cosmetics for barbers and salon owners — see it, test it, order it.</p>
+    </div>
+    <div class="location-feature">
+      <div class="location-feature-photo">
+        <img src="assets/img/gallery/location-vizbegovo-showroom.jpg" alt="Rera Hair Fashion Group wholesale showroom in Vizbegovo, stocked with salon chairs and equipment" loading="lazy">
+      </div>
+      <div class="location-feature-main">
+        <div class="location-num">— No. 03 —</div>
+        <h3 class="location-name" data-i18n="home.loc3_name">Rera Hair Fashion Group</h3>
+        <div class="location-sub" data-i18n="home.loc3_sub">Vizbegovo</div>
+        <div class="location-meta">
+          <div class="row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="home.loc3_address">Vizbegovo, Skopje</span>
+          </div>
+          <div class="row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.64-1.03-5.12-2.9-6.98A9.82 9.82 0 0 0 12.04 2zm0 18.1a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.26 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.48c-.16 0-.42.06-.64.31-.22.25-.85.83-.85 2.02 0 1.19.87 2.34 1 2.5.12.17 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28z" fill="currentColor" stroke="none"/></svg>
+            <a href="#" data-whatsapp="generic" target="_blank" rel="noopener">+389 78 500 737</a>
+          </div>
+        </div>
+        <a href="https://www.google.com/maps/place/Rera+Hair+Fashion+Group/@42.0209241,21.3993502,15z/data=!4m6!3m5!1s0x135415002bddbafd:0x30d55096004cc016!8m2!3d42.0209253!4d21.4096545!16s%2Fg%2F11m5hpxz4s?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D"
+           target="_blank" rel="noopener"
+           class="location-link">
+          <span data-i18n="home.loc1_link">Open in Google Maps</span> <span class="arrow">↗</span>
+        </a>
+      </div>
+
+      <div class="location-feature-aside">
+        <p data-i18n="home.wholesale_aside">Everything in the catalogue is stocked and shipped from here — across Skopje and the rest of Macedonia.</p>
+        <a href="products.html" class="btn btn-primary">
+          <span data-i18n="home.btn_explore">Explore the catalogue</span> <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -461,11 +516,11 @@
       </ul>
     </div>
     <div class="foot-col">
-      <h4 data-i18n="common.footer_catalogue">Catalogue</h4>
+      <h4 data-i18n="common.footer_visit">Visit</h4>
       <ul>
-        <li><a href="products.html?cat=chairs" data-i18n="common.footer_link_chairs">Chairs &amp; Furniture</a></li>
-        <li><a href="products.html?cat=tools" data-i18n="common.footer_link_tools">Tools</a></li>
-        <li><a href="products.html?cat=cosmetics" data-i18n="common.footer_link_cosmetics">Cosmetics</a></li>
+        <li><a href="#locations" data-i18n="home.loc1_name">Rera Hair &amp; Design</a></li>
+        <li><a href="#locations" data-i18n="home.loc2_name">Rera East Gate</a></li>
+        <li><a href="#locations" data-i18n="home.loc3_name">Rera Hair Fashion Group</a></li>
       </ul>
     </div>
     <div class="foot-col">

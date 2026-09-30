@@ -3,6 +3,7 @@
 
   var WHATSAPP_PHONE = '38978500737';
   var VIBER_PHONE = '+38978500737';
+  var SITE_URL = 'https://rera.mk';
   var FOUNDED_YEAR = 1996;
 
   // Hero background clips, played in order and looped. Add the second file
@@ -22,8 +23,19 @@
   var activeLang = 'en';
 
   var currentFilter = 'all';
-  // Element that opened the contact-choice modal, so focus returns to it on close.
-  var contactModalTrigger = null;
+  // Open dialog (element id) and the element that opened it, so focus can
+  // return there on close.
+  var activeDialog = null;
+  var dialogTrigger = null;
+  var viewedProduct = null;
+  var requestedProductId = null;
+
+  function detectRequestedProduct() {
+    try {
+      var id = new URLSearchParams(window.location.search).get('p');
+      return id && /^[A-Za-z0-9_-]{1,64}$/.test(id) ? id : null;
+    } catch (e) { return null; }
+  }
 
   function detectInitialFilter() {
     try {
@@ -206,7 +218,7 @@
           // rather than jumping straight to WhatsApp (some customers only
           // have Viber). Product name travels via data-attribute so the
           // click handler can build the enquiry message for either app.
-          '<button type="button" class="product-cta" data-product-name="' + escapeHtml(p.name) + '">' + ctaLabel + ' →</button>' +
+          '<button type="button" class="product-cta" data-product-name="' + escapeHtml(p.name) + '" data-product-id="' + escapeHtml(p.id) + '">' + ctaLabel + ' →</button>' +
         '</article>'
       );
     }).join('');
@@ -214,6 +226,7 @@
     grid.querySelectorAll('.img-wrap').forEach(bindImgLoad);
     grid.querySelectorAll('.product-cta').forEach(bindProductCta);
     applyFilter(currentFilter);
+    openRequestedProduct();
   }
 
   function applyFilter(cat) {
@@ -254,37 +267,41 @@
 
   function bindProductCta(btn) {
     btn.addEventListener('click', function () {
-      openContactModal(btn.dataset.productName, btn);
+      openContactModal(btn.dataset.productName, btn.dataset.productId, btn);
     });
   }
 
-  // WhatsApp/Viber choice modal (Products page only — some customers have
-  // only one of the two apps). Elements are re-queried on every call rather
-  // than cached, matching how the rest of this file treats the catalogue DOM.
-  function openContactModal(productName, triggerEl) {
-    var modal = document.getElementById('contact-modal');
+  // Canonical short link to one product. Always the public domain — a link
+  // generated on localhost or the .web.app mirror still has to open for Rera.
+  // /p/<id> is served by p.html (firebase.json rewrite), which hands off to
+  // products.html?p=<id>.
+  function productLink(id) {
+    return SITE_URL + '/p/' + encodeURIComponent(id);
+  }
+
+  // ---- Dialogs -----------------------------------------------------------
+  // The contact choice modal and the product view share one mechanism: only
+  // one is open at a time, Escape/backdrop/x close it, Tab is trapped inside,
+  // and focus returns to whatever opened it. Elements are re-queried on every
+  // call rather than cached, matching how the rest of this file treats the
+  // catalogue DOM.
+  function openDialog(id, focusEl, triggerEl) {
+    var modal = document.getElementById(id);
     if (!modal) return;
-    var titleEl = document.getElementById('contact-modal-title');
-    var waBtn = document.getElementById('contact-modal-whatsapp');
-    var viberBtn = document.getElementById('contact-modal-viber');
-
-    contactModalTrigger = triggerEl || null;
-    if (titleEl) titleEl.textContent = productName;
-
-    var message = t(activeLang, 'products.product_message').replace('{product}', productName);
-    if (waBtn) waBtn.setAttribute('href', waLink(WHATSAPP_PHONE, message));
-    if (viberBtn) viberBtn.setAttribute('href', viberLink(VIBER_PHONE, message));
-
+    // Switching dialog to dialog (product view -> Inquire) keeps the original
+    // trigger, so closing the second one still returns focus sensibly.
+    if (activeDialog && activeDialog !== id) closeDialog({ restoreFocus: false });
+    if (triggerEl !== undefined) dialogTrigger = triggerEl;
+    activeDialog = id;
     modal.classList.add('open');
     document.body.classList.add('no-scroll');
-    document.addEventListener('keydown', handleContactModalKeydown);
-    // Move focus into the dialog for keyboard and screen-reader users.
-    // The trusted click/keydown that opened this modal carries its own
+    document.addEventListener('keydown', handleDialogKeydown);
+    // The trusted click/keydown that opened this dialog carries its own
     // "return focus to the activated control" browser behavior, which can
     // outlast several animation frames and silently wins over a focus() called
     // too early — so retry across frames until it actually takes, instead of
     // guessing a delay.
-    focusUntilSet(waBtn, 20);
+    focusUntilSet(focusEl, 20);
   }
 
   function focusUntilSet(el, attemptsLeft) {
@@ -294,43 +311,128 @@
     window.requestAnimationFrame(function () { focusUntilSet(el, attemptsLeft - 1); });
   }
 
-  function closeContactModal() {
-    var modal = document.getElementById('contact-modal');
-    if (!modal || !modal.classList.contains('open')) return;
-    modal.classList.remove('open');
+  function closeDialog(opts) {
+    opts = opts || {};
+    if (!activeDialog) return;
+    var closing = activeDialog;
+    var modal = document.getElementById(closing);
+    if (modal) modal.classList.remove('open');
+    activeDialog = null;
     document.body.classList.remove('no-scroll');
-    document.removeEventListener('keydown', handleContactModalKeydown);
-    if (contactModalTrigger) {
-      contactModalTrigger.focus();
-      contactModalTrigger = null;
-    }
+    document.removeEventListener('keydown', handleDialogKeydown);
+    if (closing === 'product-view') clearProductParam();
+    if (opts.restoreFocus === false) return;
+    if (dialogTrigger) dialogTrigger.focus();
+    dialogTrigger = null;
   }
 
-  function handleContactModalKeydown(e) {
-    if (e.key === 'Escape') { closeContactModal(); return; }
-    if (e.key !== 'Tab') return;
-    var panel = document.querySelector('.contact-modal-panel');
+  function handleDialogKeydown(e) {
+    if (e.key === 'Escape') { closeDialog(); return; }
+    if (e.key !== 'Tab' || !activeDialog) return;
+    var modal = document.getElementById(activeDialog);
+    var panel = modal && modal.querySelector('[role="dialog"]');
     if (!panel) return;
     var focusable = Array.prototype.slice.call(panel.querySelectorAll('button, a[href]'));
     if (!focusable.length) return;
     var first = focusable[0], last = focusable[focusable.length - 1];
-    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    // Focus may start on the panel itself (product view) — step in from there.
+    if (document.activeElement === panel) { e.preventDefault(); (e.shiftKey ? last : first).focus(); }
+    else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
     else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   }
 
-  function initContactModal() {
-    var modal = document.getElementById('contact-modal');
-    if (!modal) return;
-    modal.querySelectorAll('[data-modal-dismiss]').forEach(function (el) {
-      el.addEventListener('click', closeContactModal);
+  // WhatsApp/Viber choice (some customers have only one of the two apps).
+  // The message carries a link to the exact product: Rera stocks several
+  // models under the same name, and neither wa.me nor viber:// can attach an
+  // image — a link is the only way the photo reaches him.
+  function openContactModal(productName, productId, triggerEl) {
+    var titleEl = document.getElementById('contact-modal-title');
+    var waBtn = document.getElementById('contact-modal-whatsapp');
+    var viberBtn = document.getElementById('contact-modal-viber');
+    if (titleEl) titleEl.textContent = productName;
+
+    var message = t(activeLang, 'products.product_message').replace('{product}', productName);
+    if (productId) message += '\n' + productLink(productId);
+    if (waBtn) waBtn.setAttribute('href', waLink(WHATSAPP_PHONE, message));
+    if (viberBtn) viberBtn.setAttribute('href', viberLink(VIBER_PHONE, message));
+
+    openDialog('contact-modal', waBtn, triggerEl);
+  }
+
+  // Full-size view of one product — what /p/<id> links open, so Rera sees
+  // exactly which model a customer means.
+  function openProductView(product, triggerEl) {
+    var imgWrap = document.getElementById('product-view-img-wrap');
+    var img = document.getElementById('product-view-img');
+    var catEl = document.getElementById('product-view-cat');
+    var nameEl = document.getElementById('product-view-name');
+    var panel = document.querySelector('#product-view [role="dialog"]');
+    if (!nameEl) return;
+
+    viewedProduct = product;
+    nameEl.textContent = product.name;
+    if (catEl) {
+      catEl.textContent = product.category;
+      catEl.hidden = !product.category;
+    }
+    if (img && imgWrap) {
+      if (product.image) {
+        img.src = product.image;
+        img.alt = product.name;
+        imgWrap.hidden = false;
+      } else {
+        img.removeAttribute('src');
+        imgWrap.hidden = true;
+      }
+    }
+    // Focus the dialog itself, not Inquire: opened from a link there's been
+    // no pointer interaction yet, so the browser would draw a keyboard focus
+    // ring round the button — it reads as a stray border to someone who
+    // just tapped a link. Keyboard users are still inside the dialog.
+    openDialog('product-view', panel, triggerEl);
+  }
+
+  function clearProductParam() {
+    try {
+      var url = new URL(window.location.href);
+      if (!url.searchParams.has('p')) return;
+      url.searchParams.delete('p');
+      window.history.replaceState({}, '', url);
+    } catch (e) {}
+  }
+
+  // Opens the product named in ?p=<id> once the catalogue has loaded. Runs
+  // once — renderProducts re-runs on every language switch.
+  function openRequestedProduct() {
+    if (!requestedProductId || !catalogue.loaded) return;
+    var id = requestedProductId;
+    requestedProductId = null;
+    var match = catalogue.products.filter(function (p) { return p.id === id; })[0];
+    if (match) openProductView(match, null);
+    else clearProductParam(); // removed from stock — just show the catalogue
+  }
+
+  function initDialogs() {
+    ['contact-modal', 'product-view'].forEach(function (id) {
+      var modal = document.getElementById(id);
+      if (!modal) return;
+      modal.querySelectorAll('[data-modal-dismiss]').forEach(function (el) {
+        el.addEventListener('click', function () { closeDialog(); });
+      });
     });
     // Closing on click lets the wa.me/viber:// navigation proceed as normal —
     // this only tidies the dialog away so it isn't still open if the user
     // comes back to the tab.
-    var waBtn = document.getElementById('contact-modal-whatsapp');
-    var viberBtn = document.getElementById('contact-modal-viber');
-    if (waBtn) waBtn.addEventListener('click', closeContactModal);
-    if (viberBtn) viberBtn.addEventListener('click', closeContactModal);
+    ['contact-modal-whatsapp', 'contact-modal-viber'].forEach(function (id) {
+      var btn = document.getElementById(id);
+      if (btn) btn.addEventListener('click', function () { closeDialog(); });
+    });
+    var ctaBtn = document.getElementById('product-view-cta');
+    if (ctaBtn) {
+      ctaBtn.addEventListener('click', function () {
+        if (viewedProduct) openContactModal(viewedProduct.name, viewedProduct.id);
+      });
+    }
   }
 
   function setLang(lang, opts) {
@@ -556,6 +658,7 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     currentFilter = detectInitialFilter();
+    requestedProductId = detectRequestedProduct();
     initYear();
     initFounded();
     initHeroVideo();
@@ -565,7 +668,7 @@
     initLangSwitch();
     initFilters();
     initImgLoad();
-    initContactModal();
+    initDialogs();
     setLang(detectLang(), { updateUrl: false });
     loadCatalogue();
   });

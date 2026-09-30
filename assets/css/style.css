@@ -1213,6 +1213,44 @@ footer{
   outline-offset:2px;
 }
 
+/* PRODUCT VIEW — same shell as the contact modal, wider, led by the photo.
+   Product photos are staff phone shots in every orientation, so the frame
+   has a fixed height and the image is contained, never cropped: the whole
+   point of this view is telling similar models apart. */
+.product-view-panel{
+  max-width:520px;
+  padding-top:56px;
+}
+/* Focus target on open (see openProductView) — a container, not a control. */
+.product-view-panel:focus{ outline:none; }
+.product-view-img{
+  height:min(52vh, 440px);
+  margin-bottom:24px;
+  background:var(--ink-3);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.product-view-img[hidden]{ display:none; }
+.product-view-img img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+}
+.product-view-cta{
+  margin-top:14px;
+  justify-content:center;
+}
+.product-view-cta:focus-visible{
+  outline:2px solid var(--accent-2);
+  outline-offset:3px;
+}
+@media (max-width:420px){
+  .product-view-panel{ padding:52px 20px 24px; }
+  .product-view-img{ height:min(46vh, 380px); }
+  .product-view-cta{ width:100%; }
+}
+
 /* RESPONSIVE */
 @media (max-width: 960px){
   .nav ul{ display:none; }

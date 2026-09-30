@@ -127,6 +127,26 @@
   </div>
 </div>
 
+<!-- PRODUCT VIEW
+     What a /p/<id> link opens: one product, large, so Rera can tell which of
+     several same-named models a customer means. Filled in by main.js. -->
+<div class="contact-modal product-view" id="product-view">
+  <div class="contact-modal-backdrop" data-modal-dismiss></div>
+  <div class="contact-modal-panel product-view-panel" role="dialog" aria-modal="true" aria-labelledby="product-view-name" tabindex="-1">
+    <button type="button" class="contact-modal-close" data-modal-dismiss aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="product-view-img" id="product-view-img-wrap">
+      <img id="product-view-img" alt="">
+    </div>
+    <p class="contact-modal-eyebrow" id="product-view-cat"></p>
+    <h2 class="contact-modal-title" id="product-view-name">&nbsp;</h2>
+    <button type="button" class="btn btn-primary product-view-cta" id="product-view-cta">
+      <span data-i18n="products.cta_inquire">Inquire</span> <span class="arrow">→</span>
+    </button>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <div class="foot-grid">

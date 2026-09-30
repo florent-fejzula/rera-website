@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rera Hair Fashion Group</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<meta name="theme-color" content="#0d0b0a" />
+
+<!--
+  Handoff for /p/<id> product links (firebase.json rewrites /p/** here).
+
+  These links are pasted into WhatsApp/Viber enquiries so Rera can see which
+  model a customer means. Chat apps build link previews from these tags
+  without running JavaScript, so they can't be product-specific on a static
+  host. They're deliberately neutral: a logo card, not the catalogue's
+  showroom photo, which shows three chairs and would be mistaken for the
+  product being asked about.
+-->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Rera Hair Fashion Group" />
+<meta property="og:title" content="Rera Hair Fashion Group" />
+<meta property="og:description" content="Погледнете го производот во каталогот · View this product in the catalogue" />
+<meta property="og:image" content="https://rera.mk/assets/img/og-product-link.jpg" />
+<meta property="og:image:width" content="600" />
+<meta property="og:image:height" content="600" />
+<meta name="twitter:card" content="summary" />
+
+<script>
+  (function () {
+    var m = window.location.pathname.match(/^\/p\/([A-Za-z0-9_-]{1,64})\/?$/);
+    window.location.replace(m ? '/products.html?p=' + m[1] : '/products.html');
+  })();
+</script>
+<style>
+  body{ margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+        background:#0d0b0a; color:#8b8276; font:15px/1.5 system-ui, sans-serif; }
+  a{ color:#d99466; }
+</style>
+</head>
+<body>
+  <p><a href="/products.html">Rera — каталог / catalogue →</a></p>
+</body>
+</html>

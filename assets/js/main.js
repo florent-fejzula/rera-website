@@ -205,8 +205,13 @@
     var ctaLabel = t(lang, 'products.cta_inquire');
 
     grid.innerHTML = catalogue.products.map(function (p) {
+      // The photo is a button that opens the full-size product view — cards
+      // are small, and a phone tap on the image is the natural way to ask for
+      // a closer look. The img's alt text doubles as the button's name.
       var imgHtml = p.image
-        ? '<img class="product-img" loading="lazy" src="' + escapeHtml(p.image) + '" alt="' + escapeHtml(p.name) + '">'
+        ? '<button type="button" class="product-img-btn" data-product-id="' + escapeHtml(p.id) + '">' +
+            '<img class="product-img" loading="lazy" src="' + escapeHtml(p.image) + '" alt="' + escapeHtml(p.name) + '">' +
+          '</button>'
         : '<div class="product-img product-img-placeholder"></div>';
 
       return (
@@ -225,6 +230,7 @@
 
     grid.querySelectorAll('.img-wrap').forEach(bindImgLoad);
     grid.querySelectorAll('.product-cta').forEach(bindProductCta);
+    grid.querySelectorAll('.product-img-btn').forEach(bindProductImage);
     applyFilter(currentFilter);
     openRequestedProduct();
   }
@@ -268,6 +274,14 @@
   function bindProductCta(btn) {
     btn.addEventListener('click', function () {
       openContactModal(btn.dataset.productName, btn.dataset.productId, btn);
+    });
+  }
+
+  function bindProductImage(btn) {
+    btn.addEventListener('click', function () {
+      var id = btn.dataset.productId;
+      var product = catalogue.products.filter(function (p) { return p.id === id; })[0];
+      if (product) openProductView(product, btn);
     });
   }
 
